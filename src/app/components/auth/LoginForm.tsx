@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { signup } from "../(auth)/actions";
+import { login } from "../../(auth)/actions";
 
-export const SignupForm = () => {
+export const LoginForm = () => {
   return (
     <form className="flex flex-col gap-y-4 py-4 px-6 border border-slate-400 rounded-md">
       <input
@@ -18,10 +18,10 @@ export const SignupForm = () => {
       />
       <div className="flex gap-x-2">
         <button
-          formAction={signup}
+          formAction={login}
           className="border border-emerald-400 rounded-md py-1 px-3 flex-1 text-center"
         >
-          Sign Up
+          Log In
         </button>
         <Link
           href="/"
@@ -31,7 +31,10 @@ export const SignupForm = () => {
         </Link>
       </div>
       <p>
-        Already have an account? <Link href="/login" className="underline">Log in</Link>
+        New here?{" "}
+        <Link href="/signup" className="underline">
+          Sign up
+        </Link>
       </p>
     </form>
   );
