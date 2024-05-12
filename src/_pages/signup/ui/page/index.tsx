@@ -1,30 +1,30 @@
+"use client";
+
 import React from "react";
 import { IProps } from "./props";
 
-import { signup } from "@/processes";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { SignupForm } from "@/widgets/signup-form";
+
+const formSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+});
 
 const Signup = (props: IProps) => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
   return (
     <div className="h-screen flex flex-col justify-center items-center">
-      <form className="flex flex-col gap-y-4 w-[400px] mx-auto border border-slate-400 rounded-md p-6">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email"
-          className="border border-slate-400 outline-none py-2 px-4 rounded-sm"
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Password"
-          className="border border-slate-400 outline-none py-2 px-4"
-          required
-        />
-        <button formAction={signup}>Sign Up</button>
-      </form>
+      <SignupForm form={form} />
     </div>
   );
 };
