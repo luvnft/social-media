@@ -1,5 +1,1 @@
-import { redirect } from "next/navigation";
-
-export default function Home() {
-  redirect("/feed");
-}
+export { Feed as default } from "@/_pages";
