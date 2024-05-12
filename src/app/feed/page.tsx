@@ -1,7 +1,6 @@
-import { IProps } from "./props";
 import { Posts } from "@/widgets";
 
-const Feed = (props: IProps) => {
+const Feed = () => {
   // const supabase = createClient();
   // const {
   //   data: { user },

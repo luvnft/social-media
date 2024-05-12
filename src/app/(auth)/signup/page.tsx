@@ -1,17 +1,18 @@
 "use client";
 
-import { LoginForm } from "@/widgets/login-form";
-import { IProps } from "./props";
+import React from "react";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { SignupForm } from "@/widgets/signup-form";
 
 const formSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
 });
 
-const Login = (props: IProps) => {
+const Signup = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -22,9 +23,9 @@ const Login = (props: IProps) => {
 
   return (
     <div className="h-screen flex flex-col justify-center items-center">
-      <LoginForm form={form} />
+      <SignupForm form={form} />
     </div>
   );
 };
 
-export default Login;
+export default Signup;

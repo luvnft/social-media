@@ -1,4 +1,3 @@
-import { IProps } from "./props";
 import Image from "next/image";
 import { Button } from "@/shared/shadcn/components/ui/button";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
@@ -6,7 +5,7 @@ import { LuUserPlus } from "react-icons/lu";
 import { IoIosSettings } from "react-icons/io";
 import { PostsSquare } from "@/widgets/posts-square";
 
-const Profile = (props: IProps) => {
+const Profile = () => {
   return (
     <main className={"flex justify-center w-[82.5%]"}>
       {/* TODO разделить все на компоненты */}

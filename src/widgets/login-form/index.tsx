@@ -6,10 +6,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@/shared/shadcn/components/ui/form";
-import { IProps } from "./props";
 import { Input } from "@/shared/shadcn/components/ui/input";
 import Link from "next/link";
 import { LoginButton } from "@/features/auth/login-button/ui";
+import { IProps } from "./props";
 
 export const LoginForm = ({ form }: IProps) => {
   return (
