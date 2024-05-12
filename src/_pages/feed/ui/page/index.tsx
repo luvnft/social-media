@@ -1,4 +1,5 @@
 import { IProps } from "./props";
+import { Posts } from "@/widgets";
 
 const Feed = (props: IProps) => {
   // const supabase = createClient();
@@ -9,7 +10,11 @@ const Feed = (props: IProps) => {
   // if (!user) {
   //   redirect("/login");
   // }
-  return <div>Feed</div>;
+  return (
+    <main className={"flex justify-center w-[84%]"}>
+      <Posts />
+    </main>
+  );
 };
 
 export default Feed;
