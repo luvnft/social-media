@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { createClientServer } from "@/processes";
+import { createClientServer } from "@/../../utils/supabase/server";
 
 export const login = async (formData: FormData) => {
   const supabase = createClientServer();
@@ -41,7 +41,6 @@ export const signup = async (formData: FormData) => {
   }
 
   revalidatePath("/", "layout");
-  alert("Confirm your email.");
   redirect("/");
 };
 

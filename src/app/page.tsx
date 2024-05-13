@@ -1,1 +1,5 @@
-export { Feed as default } from "@/_pages";
+const Home = () => {
+  return <div>Home</div>;
+};
+
+export default Home;
